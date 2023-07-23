@@ -1,0 +1,63 @@
+ 
+             nSniffer
+      Made by prijkes
+
+      Usage: <log options> <options> <param>
+
+    Log Options              Descr
+   ---------------------    -------
+     -v                       Least verbose
+     -vv                      More verbose
+     -vvv                     Full verbose, shows all info
+     -pd <d>                  Packets delay (in ms), default 200
+     -o                       Show packets in ascii
+     -oh                      Show packets in hexadecimal
+     -ph                      Leave packet headers in the output
+
+    Options                  Descr
+   ---------                -------
+      -pl                     List all network devices (WinPCap)
+      -wl                     List all network devices info (Windows)
+      -i <n>                  Show advanced info of device <n>
+      -f <filter>             Filter to use/compile, use quotes
+      -snif <n>               Start to snif on device <n>
+      -send <n>               Send a custom packet to device <n>
+------------------------------------------------------------------------
+
+1. Log options
+The log options specify how the output should look like, and what needs to be
+printed to the output.
+There are 3 log levels, -v, -vv and -vvv.
+-v	Is the one that shows the least information, its different for each header,
+   	but the most common are: Layer, Source and Destination.
+-vv	Same as -v, but shows also time, length, and more for each header.
+-vvv	Shows all possible info, header options, checksum, Protocols, etc.
+
+The packet delay specifys the time between each packet to show.
+The default is 200ms, which means theres a 200 milliseconds wait time before
+the next packet with information shows on the output (if logging is enabled).
+
+If you specify -o and/or -oh, the packet will be displayed. The ASCII will just
+show the packet as it is, but 'dot' the characters it can't display. IE. (hex) 01
+it can't display, so it will replace it with a dot. It will show (hex) 00 as a new
+line.
+The hex format will show the output in hex with the ascii text next to it, but as
+with the ASCII it will also dot the characters out that are invalid to display.
+The difference is that it won't display (hex) 00 and newline as a newline.
+
+-ph means it will also show the packet headers data, instead of leaving it out.
+Use it together with -o or/and -oh if wanted to see the header data.
+
+
+2. Options
+Use -pl to see a list of devices ID to use to snif on/send to.
+Use -i <n> to see specific info for device <n>.
+If you dont have WinPCap installed and just want to see your NIC info, use -wl
+
+To use a filter, use -f <filter>, the filter has to be surrounded with quotes
+in order for WinPCap to understand and compile/use the filter.
+For a list of filters options for WinPCap, look at
+www.winpcap.org/docs/docs31/html/group__language.html
+
+If you want to snif, use -snif <n>, where n is the device ID from -pl.
+If you want to send a packet, use -send <n>, where n is the device ID from -pl.

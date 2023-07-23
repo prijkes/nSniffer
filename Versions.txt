@@ -1,0 +1,18 @@
+------ v1.2.1 (16 May 2011).
+1. Removed all references to my name and email.
+
+------ v1.2 (17 August 2006).
+1. Fixed the data space error (used more stable method).
+2. Fixed the time info.
+3. Updated TODO.txt
+
+
+------ v1.1
+1. Added more layers.
+2. Fixed the data adding - space in data crashed the program.
+3. Removed the default destination address in the ARP header when creating an ARP packet.
+4. Small log change of the ARP header, Ethernet addresses now only shows with full verbose, and hardware/protocol type shows with half vebose.
+
+
+------ v1.0
+1. Initial release (14 Juni 2006).
