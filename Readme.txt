@@ -54,6 +54,3 @@ calculated by the program and automatically filled in.
 -- Usage info
 This program is free and released under the GPL, you may not use any of the files
 for money making (ie. commercial) purposes.
-
-Copyright (C) 2006 Paul Rijkes
-p.rijkes@gmail.com
